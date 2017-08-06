@@ -28,23 +28,25 @@ router.get('/guests', (req, res) => {
         .catch(err => res.status(500).send(err))
 })
 
-router.put('/guests/:_id', (req, res) => {
+router.put('/guests/:_id', async (req, res) => {
     const id = req.params._id
     const guestUpdate = req.body as IGuestUpdate
 
     console.log(`got id ${id} count ${guestUpdate.rsvpCount}`)
 
-    Guest.findById(id)
-        .then(guest => {
-            if (guest) {
-                guest.rsvpCount = guestUpdate.rsvpCount
-                guest.hasResponded = guestUpdate.hasResponded
-                guest.save()
-                    .then(() => res.sendStatus(204))
-                    .catch(err => res.status(500).send(err))
-            }
-        })
-        .catch(err => res.status(500).send(err))
+    try {
+        const guest = await Guest.findById(id)
+        if (guest) {
+            guest.rsvpCount = guestUpdate.rsvpCount
+            guest.hasResponded = guestUpdate.hasResponded
+            await guest.save()
+            res.sendStatus(204)
+        } else {
+            res.sendStatus(404)
+        }
+    } catch (err) {
+        res.status(500).send(err)
+    }
 })
 
 export default router
