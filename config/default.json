@@ -1,0 +1,8 @@
+{
+    "expressPort": 3000,
+    "mongodb": {
+        "defaultDatabase": "mongopop",
+        "defaultCollection": "simples",
+        "defaultUri": "mongodb://localhost:27017"
+    }
+}

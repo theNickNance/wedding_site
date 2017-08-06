@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/theNickNance/wedding_site#readme",
   "devDependencies": {
+    "@types/config": "0.0.32",
     "@types/express": "^4.0.36",
     "typescript": "^2.4.2"
   },
   "dependencies": {
+    "config": "^1.26.1",
     "express": "^4.15.3"
   }
 }
