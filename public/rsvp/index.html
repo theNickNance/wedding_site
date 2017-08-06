@@ -17,13 +17,15 @@
     <div class="step" data-step="1">
       <div class="intro-wrapper">
         <div class="intro-title">Please type your first and last name</div>
-        <input type="text" class="name-field" id="name-field" placeholder="John Smith" />
-        <button type="button" class="name-button" id="name-button">Find My Reservation</button>
+        <form id="name-form">
+          <input type="text" class="name-field" id="name-field" placeholder="John Smith" />
+          <button type="submit" class="name-button">Find My Reservation</button>
+        </form>
         <ul class="guest-list" id="guest-list"></ul>
       </div>
     </div>
 
-    <script type="text/javascript" src="jquery-3.2.1.min.js" /></script>
+    <script type="text/javascript" src="../jquery-3.2.1.min.js" /></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
