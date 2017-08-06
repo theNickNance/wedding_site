@@ -1,0 +1,7 @@
+PUT http://localhost:3000/api/guests/5987231eac59bbbb6f48e74f
+content-type: application/json
+
+{
+    "hasResponded": true,
+    "rsvpCount": 2
+}

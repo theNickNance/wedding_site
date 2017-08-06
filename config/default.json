@@ -1,4 +1,13 @@
 {
     "expressPort": 3000,
-    "mongodb": "mongodb://WeddingGuestUser:WeddingGuestPass@ds111441.mlab.com:11441/wedding_quests"
+    "useDb": false,
+    "mongodb": {
+        "uri": "mongodb://dbuser:dbpassword@ds111441.mlab.com:11441/wedding_guests",
+        "options": {
+            "useMongoClient": true,
+            "socketTimeoutMS": 0,
+            "keepAlive": true,
+            "reconnectTries": 30
+        }
+    }
 }

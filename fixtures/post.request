@@ -1,0 +1,11 @@
+POST http://localhost:3000/api/guests
+content-type: application/json
+
+{
+    "guestName": "Carolyn Boydston Doyle Boydston",
+    "guestDisplayName": "Carolyn and Doyle Boydston",
+    "hasResponded": false,
+    "guestCount": 2,
+    "rsvpCount": 0,
+    "isBridalGuest": false
+}

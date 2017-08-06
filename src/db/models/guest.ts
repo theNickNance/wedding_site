@@ -1,14 +1,16 @@
 import * as mongoose from 'mongoose'
 
-const Schema = mongoose.Schema
+import { IGuest } from '../../types'
 
-var GuestSchema   = new Schema({
+const guestSchema = new mongoose.Schema({
     guestName: String,
     guestDisplayName: String,
     hasResponded: Boolean,
     guestCount: Number,
     rsvpCount: Number,
     isBridalGuest: Boolean
-});
+})
 
-export default mongoose.model('Guest', GuestSchema)
+interface IGuestModel extends IGuest, mongoose.Document { }
+
+export default mongoose.model<IGuestModel>('Guest', guestSchema)

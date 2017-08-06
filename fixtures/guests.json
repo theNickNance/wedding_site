@@ -1,19 +1,20 @@
 {
     "guests": [{
-        "_id": 1,
+        "_id": "0",
         "guestName": "Nick Nance Rhonda Nance",
         "guestDisplayName": "Nick and Rhonda Nance",
         "hasResponded": false,
         "guestCount": 4,
         "rsvpCount": 0,
         "isBridalGuest": false
-    },{
-        "_id": 2,
-        "guestName": "Carolyn Boydston Doyle Boydson",
-        "guestDisplayName": "Carolyn and Doyle Boydson",
-        "hasResponded": true,
+    },
+    {
+        "_id": "1",
+        "guestName": "Carolyn Boydston Doyle Boydston",
+        "guestDisplayName": "Carolyn and Doyle Boydston",
+        "hasResponded": false,
         "guestCount": 2,
-        "rsvpCount": 2,
+        "rsvpCount": 0,
         "isBridalGuest": false
     }]
 }
