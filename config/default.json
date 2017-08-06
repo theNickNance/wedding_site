@@ -1,8 +1,8 @@
 {
     "expressPort": 3000,
     "mongodb": {
-        "defaultDatabase": "mongopop",
-        "defaultCollection": "simples",
-        "defaultUri": "mongodb://localhost:27017"
+        "defaultDatabase": "wedding_guests",
+        "defaultCollection": "guests",
+        "defaultUri": "mongodb://thenicknance:23Sooners23@ds111441.mlab.com:11441"
     }
 }
