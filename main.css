@@ -1,0 +1,329 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.header {
+  font-family: 'Cinzel', serif;
+}
+
+.full-size {
+  height: 100%;
+  width: 100%;
+}
+
+.farsi {
+  font-family: cursive;
+}
+
+.low-quality {
+  background-image: url(images/low_quality.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.engagement-1 {
+  background-image: url(images/engagement-43.jpg);
+}
+.engagement-2 {
+  background-image: url(images/engagement-14.jpg);
+  background-position: center top -8vw !important;
+}
+.engagement-3 {
+  background-image: url(images/engagement-23.jpg);
+  background-position: center top -8vw !important;
+}
+.engagement-4 {
+  background-image: url(images/engagement-107.jpg);
+}
+.engagement-5 {
+  background-image: url(images/engagement-131.jpg);
+}
+.engagement-6 {
+  background-image: url(images/engagement-85.jpg);
+}
+.engagement-7 {
+  background-image: url(images/engagement-53.jpg);
+}
+.engagement-8 {
+  background-image: url(images/engagement-29.jpg);
+  background-position: center top -10vw !important;
+}
+.engagement-9 {
+  background-image: url(images/engagement-100.jpg);
+  background-position: center top -5vw !important;
+}
+.engagement-10 {
+  background-image: url(images/engagement-137.jpg);
+}
+.engagement-11 {
+  background-image: url(images/engagement-165.jpg);
+}
+.engagement-12 {
+  background-image: url(images/engagement-150.jpg);
+}
+
+.carousel-wrapper {
+  width: 100%;
+  height: 54vw;
+  max-height: 95vh;
+  min-height: 40vh;
+  position: relative;
+}
+
+.carousel-wrapper .loading-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 75px;
+  width: 90px;
+  margin: -37px 0 0 -45px;
+}
+
+.carousel-wrapper .title {
+  position: absolute;
+  bottom: -1.7vw;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 8vw;
+  color: white;
+  user-select: none;
+  line-height: 1;
+}
+
+.carousel {
+  position: relative;
+  cursor: e-resize;
+}
+
+.carousel .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.carousel-wrapper .slide img {
+  width: 100%;
+}
+
+.invitation {
+  text-align: center;
+  margin-top: 10vw;
+  font-size: 3.2vw;
+  font-family: 'Raleway', sans-serif;
+  color: #95a5a6;
+  font-weight: 200;
+}
+.invitation .name {
+  color: #7f8c8d;
+  font-weight: 300;
+}
+.invitation .date {
+  font-family: 'Cinzel', serif;
+  font-size: 11vw;
+  color: #34495e;
+  display: block;
+}
+
+.at {
+  text-align: center;
+  font-size: 20vw;
+  color: #b68e4a;
+  font-weight: 100;
+  position: relative;
+  line-height: 1;
+}
+.at:after {
+  content: "";
+  position: absolute;
+  right: 3vw;
+  left: 60vw;
+  height: 0.4vw;
+  background: #e2decf;
+  top: 58%;
+}
+.at:before {
+  content: "";
+  position: absolute;
+  left: 3vw;
+  right: 60vw;
+  height: 0.4vw;
+  background: #e2decf;
+  top: 58%;
+}
+
+.gaillardia-img {
+  width: 100%;
+  display: block;
+}
+
+.gaillardia-text {
+  font-family: 'Cinzel', serif;
+  font-size: 6.5vw;
+  margin-top: 4vw;
+  color: #b68e4a;
+  display: block;
+  text-align: center;
+}
+
+.gaillardia-logo {
+  display: block;
+  margin: 4vw auto 2vw;
+  width: 2.5vw;
+}
+
+.gaillardia-address {
+  text-align: center;
+  margin-top: 4vw;
+  font-size: 4vw;
+  font-family: 'Raleway', sans-serif;
+  color: #95a5a6;
+  font-weight: 200;
+}
+.gaillardia-address span {
+  color: #34495e;
+}
+
+.google-maps-link {
+  display: block;
+  width: 70vw;
+  height: 13vw;
+  background-image: url(images/google-maps.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 7vw;
+  margin: 6vw auto;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.3vw;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-top: 3vw;
+}
+.google-maps-link:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.google-maps-link span {
+  position: relative;
+  z-index: 2;
+}
+
+.registry-wrapper {
+  width: 100%;
+  margin: 4vw 0 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.registry-title {
+  color: #111;
+  text-align: center;
+  font-size: 15vw;
+  position: relative;
+  bottom: -6vw;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.registry-links {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  border: 4px solid #111;
+}
+.registry-link {
+  font-family: 'Cinzel', serif;
+  display: block;
+  float: left;
+  width: 50%;
+  height: 25vw;
+  background-image: url(images/google-maps.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 4vw;
+  border: 4px solid #111;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 10.2vw;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 6vw rgba(0, 0, 0, 0.8);
+}
+.registry-link:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.registry-link:hover {
+  text-decoration: underline;
+}
+.registry-link span {
+  position: relative;
+  z-index: 2;
+}
+.anthropologie {
+  background-image: url(images/anthropologie.jpg);
+}
+.pottery-barn {
+  background-image: url(images/pottery_barn.jpg);
+}
+.william-sonoma {
+  background-image: url(images/william_sonoma.jpg);
+}
+.target {
+  background-image: url(images/target.jpg);
+}
+.bbb-link {
+  width: 100%;
+  background-image: url(images/bed_bath_beyond.jpg);
+  background-position: center bottom -15vw;
+}
+
+.hashtag {
+  font-size: 8vw;
+  color: #34495e;
+  display: block;
+  text-align: center;
+  margin: 8vw 0 4vw;
+  font-weight: 100;
+}
+.hashtag span {
+  color: #7f8c8d;
+}
+.hashtag .hash {
+  color: #ecf0f1;
+  font-family: 'Raleway', serif;
+  font-weight: bold;
+  font-size: 12vw;
+  position: relative;
+  bottom: -2vw;
+}
+
+.instagram-image {
+  display: block;
+  margin: 0 auto;
+  width: 20vw;
+}
