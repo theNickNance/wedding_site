@@ -1,12 +1,12 @@
 // STATE
 const rsvpState = {
   guestList: [],
+  currentGuest: null,
 };
 
 // INITIAL FETCH
 $.get('/api/guests', function(data) {
-  const objData = JSON.parse(data);
-  setGuestList(objData.guests);
+  setGuestList(data.guests);
 });
 
 // HELPERS
@@ -16,13 +16,29 @@ function buildListDom(list) {
     return guest.guestName.toLowerCase().indexOf(searchVal.toLowerCase()) !== -1;
   });
   return guestList.map(function(guest) {
-    return '<li data-id="' + guest.id + '"">' + guest.guestDisplayName + '</li>';
+    return '<li data-id="' + guest._id + '"">' + guest.guestDisplayName + '</li>';
   });
+}
+
+function buildCountDom(maxCount) {
+  let countDom = '';
+  let counter = 0;
+  while(counter <= maxCount) {
+    countDom += '<input type="radio" name="' + counter + '" value="' + counter + '"/> ' + counter;
+    counter++;
+  }
+  return countDom;
 }
 
 // ACTIONS *CHANG STATE*
 function setGuestList(list) {
   rsvpState.guestList = list;
+}
+
+function setSelectedGuest(id) {
+  rsvpState.currentGuest = rsvpState.guestList.find(function(guest) {
+    return guest._id == id;
+  });
 }
 
 $(document).ready(function() {
@@ -33,6 +49,10 @@ $(document).ready(function() {
   });
 
   $('#guest-list').on('click', function(e) {
-    console.log("TARGET", e);
+    setSelectedGuest(e.target.dataset.id);
+    $('.step').hide();
+    $('.step[data-step=2]').show();
+    $('#guest-display-name').html(rsvpState.currentGuest.guestDisplayName);
+    $('#rsvp-count-group').html(buildCountDom(rsvpState.currentGuest.guestCount));
   });
 });
