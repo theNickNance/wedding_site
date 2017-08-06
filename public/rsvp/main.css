@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+button:focus {
+  outline: 0;
+}
+
 .hidden {
   display: none;
 }
@@ -24,7 +28,7 @@ a {
 }
 
 .step-wrapper {
-  margin: 200px auto 0;
+  margin: 15% auto 0;
   width: 500px;
 }
 
@@ -52,7 +56,7 @@ a {
 
 .select-text {
   font-size: 12px;
-  color: #999;
+  color: #AAA;
   font-weight: bold;
   margin-bottom: 10px;
   padding-left: 20px;
@@ -108,6 +112,8 @@ a {
 .guest-list li.disabled {
   cursor: default;
   border: none;
+  text-align: center;
+  font-size: 12px;
 }
 .guest-list li:not(.disabled):hover {
   color: #3498db;
@@ -213,4 +219,80 @@ a {
 
 .radio-group input[type=radio]:checked ~ label {
   color: #3498db;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background: white;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.modal-label {
+  font-size: 12px;
+  color: #AAA;
+  font-weight: bold;
+  margin: 20px 0 5px;
+  text-transform: uppercase;
+}
+
+.modal-info {
+  font-size: 16px;
+}
+
+.modal-buttons {
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.modal-buttons button {
+  margin-left: 10px;
+}
+
+.confirm-button {
+  color: white;
+  padding: 10px 20px;
+  box-shadow: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: #2ecc71;
+  cursor: pointer;
+}
+.confirm-button:hover {
+  background: #27ae60;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  box-shadow: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: #ecf0f1;
+  cursor: pointer;
+}
+.cancel-button:hover {
+  background: #bdc3c7;
 }

@@ -19,7 +19,9 @@ function transitionStep(step) {
 function buildListDom(list) {
   const searchVal = $('#name-field').val();
   const guestList = list.filter(function(guest) {
-    return guest.guestName.toLowerCase().indexOf(searchVal.toLowerCase()) !== -1;
+    const isMatch = guest.guestName.toLowerCase().indexOf(searchVal.toLowerCase()) !== -1;
+    const hasNotResponded = !guest.hasResponded;
+    return isMatch && hasNotResponded;
   });
   if (guestList && guestList.length) {
     return guestList.map(function(guest) {
@@ -50,7 +52,7 @@ function rsvpError() {
   alert('There was a problem sending your response. Please try again.');
 }
 
-// ACTIONS *CHANG STATE*
+// ACTIONS *CHANGE STATE*
 function setGuestList(list) {
   rsvpState.guestList = list;
 }
@@ -72,19 +74,24 @@ $(document).ready(function() {
   $('#rsvp-form').on('submit', function(e) {
     e.preventDefault();
     const formSerial = $(this).serialize();
-    console.log("THIS", formSerial);
-    const confirmPhrase = "Are you sure? Please make sure the following information is correct.";
-    const groupPhrase = "Party:  " + rsvpState.currentGuest.guestDisplayName;
-    const numberPhrase = "Number attending:  " + $('input[name=guestCount]:checked').val();
-    if (window.confirm(confirmPhrase + "\n\n\n" + groupPhrase + "\n\n" + numberPhrase)) { 
-      $.ajax('/api/guests/' + rsvpState.currentGuest._id, {
-        method: 'PUT',
-        data: $(this).serialize(),
-        success: rsvpSuccess,
-        error: rsvpError,
-        timeout: rsvpError,
-      });
-    }
+    $("#count-info").html($('input[name=guestCount]:checked').val());
+    $("#party-info").html(rsvpState.currentGuest.guestDisplayName);
+    $("#confirmation-modal").fadeIn(200);
+  });
+
+  $('#confirm-button').on('click', function(e) {
+    $.ajax('/api/guests/' + rsvpState.currentGuest._id, {
+      method: 'PUT',
+      data: $(this).serialize(),
+      success: rsvpSuccess,
+      error: rsvpError,
+      timeout: rsvpError,
+      complete: function() { $("#confirmation-modal").fadeOut(100); }
+    });
+  });
+
+  $('#cancel-button').on('click', function(e) {
+    $("#confirmation-modal").fadeOut(100);
   });
 
   $('#guest-list').on('click', function(e) {

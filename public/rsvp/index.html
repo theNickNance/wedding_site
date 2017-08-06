@@ -44,8 +44,22 @@
     <div class="step hidden" data-step="3">
       <div class="step-wrapper">
         <div class="step-title">Thank you, <span class="guest-display-name"></span></div>
-        <div class="step-sub-title">You have successfully given your response</div>
+        <div class="step-sub-title">You have successfully sent a response</div>
         <a href="/" class="home-link">Back to nickandsogoal.com</a>
+      </div>
+    </div>
+
+    <div class="mask hidden" id="confirmation-modal">
+      <div class="modal">
+        <div class="modal-title">Please confirm this information is correct</div>
+        <div class="modal-label">Guest Party</div>
+        <div class="modal-info" id="party-info"></div>
+        <div class="modal-label">Number Attending</div>
+        <div class="modal-info" id="count-info"></div>
+        <div class="modal-buttons">
+          <button type="button" class="confirm-button" id="confirm-button">Confirm</button>
+          <button type="button" class="cancel-button" id="cancel-button">Cancel</button>
+        </div>
       </div>
     </div>
 
