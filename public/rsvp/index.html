@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scale=no">
 
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="main.css">
@@ -15,25 +15,37 @@
   <body>
     
     <div class="step" data-step="1">
-      <div class="intro-wrapper">
-        <div class="intro-title">Please type your first and last name</div>
+      <div class="step-wrapper">
+        <div class="step-title">Please type your first and last name</div>
         <form id="name-form">
-          <input type="text" class="name-field" id="name-field" placeholder="John Smith" />
+          <input type="text" class="name-field" id="name-field" placeholder="Ex: John Smith" autocomplete="off" />
           <button type="submit" class="name-button">Find My Reservation</button>
         </form>
-        <ul class="guest-list" id="guest-list"></ul>
+        <div class="hidden" id="guest-list-wrapper">
+          <div class="select-text">Select your party below</div>
+          <ul class="guest-list" id="guest-list"></ul>
+        </div>
       </div>
     </div>
 
     <div class="step hidden" data-step="2">
-      <div class="welcome-wrapper">
-        <div class="welcome-title">Welcome, <span id="guest-display-name"></span></div>
-        <div class="welcome-form-label">How many from your party will be attending?</div>
+      <div class="step-wrapper">
+        <div class="step-title welcome-title">Welcome, <span class="guest-display-name"></span></div>
+        <a class="oops-link" href="/rsvp">Not you?</a>
+        <div class="step-sub-title">How many from your party will be attending?</div>
         <form id="rsvp-form">
-          <radiogroup id="rsvp-count-group"></radiogroup>
+          <ul class="radio-group" id="rsvp-count-group"></ul>
           <input type="hidden" name="hasResponded" value="true" />
-          <button type="submit" class="count-button">RSVP</button>
+          <button type="submit" class="rsvp-button">RSVP</button>
         </form>
+      </div>
+    </div>
+
+    <div class="step hidden" data-step="3">
+      <div class="step-wrapper">
+        <div class="step-title">Thank you, <span class="guest-display-name"></span></div>
+        <div class="step-sub-title">You have successfully given your response</div>
+        <a href="/" class="home-link">Back to nickandsogoal.com</a>
       </div>
     </div>
 
