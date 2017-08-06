@@ -1,5 +1,6 @@
 {
     "guests": [{
+        "_id": 1,
         "guestName": "Nick Nance Rhonda Nance",
         "guestDisplayName": "Nick and Rhonda Nance",
         "hasResponded": false,
@@ -7,6 +8,7 @@
         "rsvpCount": 0,
         "isBridalGuest": false
     },{
+        "_id": 2,
         "guestName": "Carolyn Boydston Doyle Boydson",
         "guestDisplayName": "Carolyn and Doyle Boydson",
         "hasResponded": true,

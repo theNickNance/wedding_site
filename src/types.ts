@@ -6,3 +6,8 @@ export interface IGuest {
     rsvpCount: number
     isBridalGuest: boolean
 }
+
+export interface IGuestUpdate {
+    hasResponded: boolean
+    rsvpCount: number
+}
