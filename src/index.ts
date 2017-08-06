@@ -3,7 +3,7 @@ import * as config from 'config'
 import * as bodyParser from 'body-parser'
 import * as fs from 'fs'
 
-import routes from './routes'
+import routes from './db/db-routes'
 
 const app = express()
 const port = config.get('expressPort')

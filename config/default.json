@@ -1,8 +1,4 @@
 {
     "expressPort": 3000,
-    "mongodb": {
-        "defaultDatabase": "wedding_guests",
-        "defaultCollection": "guests",
-        "defaultUri": "mongodb://thenicknance:23Sooners23@ds111441.mlab.com:11441"
-    }
+    "mongodb": "mongodb://WeddingGuestUser:WeddingGuestPass@ds111441.mlab.com:11441/wedding_quests"
 }
