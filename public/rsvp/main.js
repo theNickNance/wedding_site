@@ -24,7 +24,7 @@ function buildCountDom(maxCount) {
   let countDom = '';
   let counter = 0;
   while(counter <= maxCount) {
-    countDom += '<input type="radio" name="' + counter + '" value="' + counter + '"/> ' + counter;
+    countDom += '<input type="radio" name="guestCount" value="' + counter + '"/> ' + counter;
     counter++;
   }
   return countDom;
@@ -46,6 +46,11 @@ $(document).ready(function() {
   $('#name-form').on('submit', function(e) {
     e.preventDefault();
     $('#guest-list').html(buildListDom(rsvpState.guestList));
+  });
+
+  $('#rsvp-form').on('submit', function(e) {
+    e.preventDefault();
+    console.log("test", $(this).serialize());
   });
 
   $('#guest-list').on('click', function(e) {

@@ -28,8 +28,10 @@
     <div class="step hidden" data-step="2">
       <div class="welcome-wrapper">
         <div class="welcome-title">Welcome, <span id="guest-display-name"></span></div>
+        <div class="welcome-form-label">How many from your party will be attending?</div>
         <form id="rsvp-form">
           <radiogroup id="rsvp-count-group"></radiogroup>
+          <input type="hidden" name="hasResponded" value="true" />
           <button type="submit" class="count-button">RSVP</button>
         </form>
       </div>
