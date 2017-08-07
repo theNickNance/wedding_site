@@ -76,7 +76,7 @@ $(document).ready(function() {
     const formSerial = $(this).serialize();
     $("#count-info").html($('input[name=guestCount]:checked').val());
     $("#party-info").html(rsvpState.currentGuest.guestDisplayName);
-    $("#confirmation-modal").fadeIn(200);
+    $("#confirmation-modal").fadeIn(100);
   });
 
   $('#confirm-button').on('click', function(e) {

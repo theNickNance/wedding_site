@@ -15,6 +15,35 @@ button:focus {
   outline: 0;
 }
 
+.footer {
+  background: #ecf0f1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: 5;
+}
+
+.hashtag {
+  position: fixed;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.help-text {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
 .hidden {
   display: none;
 }
