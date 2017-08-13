@@ -98,9 +98,13 @@ $(document).ready(function() {
     const id = e.target.dataset.id;
     if (id) {
       setSelectedGuest(id);
-      transitionStep(2);
       $('.guest-display-name').html(rsvpState.currentGuest.guestDisplayName);
-      $('#rsvp-count-group').html(buildCountDom(rsvpState.currentGuest.guestCount));
+      if (rsvpState.currentGuest.hasResponded) {
+        transitionStep(4);
+      } else {
+        transitionStep(2);
+        $('#rsvp-count-group').html(buildCountDom(rsvpState.currentGuest.guestCount));
+      }
     }
   });
 });

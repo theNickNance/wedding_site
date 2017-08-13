@@ -8,7 +8,7 @@ const router = express.Router()
 router.get('/guests', (req, res) => {
     fs.readFile('./fixtures/guests.json', (err, buffer) => {
         const guests = JSON.parse(buffer.toString('utf8')) as Array<IGuest>
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json')
         res.json(guests)
     })
 })

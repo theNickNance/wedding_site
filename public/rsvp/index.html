@@ -21,7 +21,7 @@
     <div class="step" data-step="1">
       <div class="step-wrapper">
         <div class="step-title">Please type your first and last name</div>
-        <form id="name-form">
+        <form class="name-form" id="name-form">
           <input type="text" class="name-field" id="name-field" placeholder="Ex: John Smith" autocomplete="off" />
           <button type="submit" class="name-button">Find My Reservation</button>
         </form>
@@ -37,7 +37,7 @@
         <div class="step-title welcome-title">Welcome, <span class="guest-display-name"></span></div>
         <a class="oops-link" href="/rsvp">Not you?</a>
         <div class="step-sub-title">How many from your party will be attending?</div>
-        <form id="rsvp-form">
+        <form class="rsvp-form" id="rsvp-form">
           <ul class="radio-group" id="rsvp-count-group"></ul>
           <input type="hidden" name="hasResponded" value="true" />
           <button type="submit" class="rsvp-button">RSVP</button>
@@ -49,6 +49,14 @@
       <div class="step-wrapper">
         <div class="step-title">Thank you, <span class="guest-display-name"></span></div>
         <div class="step-sub-title">You have successfully sent a response</div>
+        <a href="/#registry" class="home-link">Head over to the registry</a>
+      </div>
+    </div>
+
+    <div class="step hidden" data-step="4">
+      <div class="step-wrapper">
+        <div class="step-title">Hello, <span class="guest-display-name"></span></div>
+        <div class="step-sub-title">We already have a response from you. If you have any questions, please contact Sogoal and Nick at <a href="mailto:sogoald@gmail.com">sogoald@gmail.com</a></div>
         <a href="/#registry" class="home-link">Head over to the registry</a>
       </div>
     </div>
