@@ -23,8 +23,8 @@ router.post('/guests', (req, res) => {
 })
 
 router.get('/guests', (req, res) => {
-    Guest.find()
-        .then(items => res.json(items))
+    Guest.find().batchSize(500)
+        .then(items => res.json({guests :items}))
         .catch(err => res.status(500).send(err))
 })
 
