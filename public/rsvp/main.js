@@ -19,9 +19,7 @@ function transitionStep(step) {
 function buildListDom(list) {
   const searchVal = $('#name-field').val();
   const guestList = list.filter(function(guest) {
-    const isMatch = guest.guestName.toLowerCase().indexOf(searchVal.toLowerCase()) !== -1;
-    const hasNotResponded = !guest.hasResponded;
-    return isMatch && hasNotResponded;
+    return guest.guestName.toLowerCase().indexOf(searchVal.toLowerCase()) !== -1;
   });
   if (guestList && guestList.length) {
     return guestList.map(function(guest) {
@@ -37,7 +35,7 @@ function buildCountDom(maxCount) {
   while(counter <= maxCount) {
     const labelContent = counter === 0 ? 'Sorry, we can\'t make it' : counter;
     const label = '<label for="radio-' + counter + '">' + labelContent + '</label>';
-    countDom += '<li><input type="radio" name="guestCount" id="radio-' + counter + '" value="' + counter + '"/>' + label + '<div class="check"></div></li>';
+    countDom += '<li><input type="radio" name="rsvpCount" id="radio-' + counter + '" value="' + counter + '"/>' + label + '<div class="check"></div></li>';
     counter++;
   }
   return countDom;
@@ -73,16 +71,21 @@ $(document).ready(function() {
 
   $('#rsvp-form').on('submit', function(e) {
     e.preventDefault();
-    const formSerial = $(this).serialize();
     $("#count-info").html($('input[name=guestCount]:checked').val());
     $("#party-info").html(rsvpState.currentGuest.guestDisplayName);
     $("#confirmation-modal").fadeIn(100);
   });
 
   $('#confirm-button').on('click', function(e) {
+    const rsvpVal = $('[name=rsvpCount]:checked').val();
+
     $.ajax('/api/guests/' + rsvpState.currentGuest._id, {
       method: 'PUT',
-      data: $(this).serialize(),
+      data: JSON.stringify({
+        "rsvpCount": rsvpVal,
+        "hasResponded": true
+      }),
+      contentType: "application/json",
       success: rsvpSuccess,
       error: rsvpError,
       timeout: rsvpError,
